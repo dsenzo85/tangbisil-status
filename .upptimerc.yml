@@ -1,31 +1,39 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: dsenzo85
+repo: tangbisil-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: 홈
+    url: https://tangbisil.kr/
+    maxResponseTime: 10000
+  - name: 연봉 계산기
+    url: https://tangbisil.kr/salary/
+    maxResponseTime: 10000
+  - name: 노무 소식
+    url: https://tangbisil.kr/news/
+    maxResponseTime: 10000
+  - name: 오늘의 투표(API)
+    url: https://tangbisil.kr/api/poll
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 10000
+    __dangerous__body_down_if_text_missing: '"options"'
+
+workflowSchedule:
+  uptime: "*/5 * * * *"
+  responseTime: "0 23 * * *"
+  graphs: "0 0 * * *"
+  summary: "0 0 * * *"
+  staticSite: "0 1 * * *"
+  updates: "0 3 * * 0"
+
+assignees:
+  - dsenzo85
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  baseUrl: /tangbisil-status
+  name: 탕비실 상태
+  introTitle: "탕비실(tangbisil.kr) 가동 상태"
+  introMessage: 5분마다 바깥에서 확인해요.
   navbar:
-    - title: Status
-      href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: 탕비실
+      href: https://tangbisil.kr/
